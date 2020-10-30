@@ -18,6 +18,17 @@ function reoccurringFirstItem2(arr) {
   }
 }
 
+function reoccurringFirstItem2(arr) {
+  const map = {}
+  
+  for (let i =0; i< arr.length; i += 1) {
+    if (map[arr[i]] !== undefined) {
+      return arr[i]
+    } else {
+      map[arr[i]] = arr[i]
+    }
+  }
+}
 
 console.log(reoccurringFirstItem2([1, 7, 8, 2, 3, 4, 5, 4, 5, 6, 8]))
 console.log(reoccurringFirstItem2([1, 2, 3, 4, 5, 4, 5, 6, 8]))
