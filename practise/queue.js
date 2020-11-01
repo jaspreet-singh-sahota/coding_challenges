@@ -28,7 +28,24 @@ class Queue {
     return this
   }
 
-  
+  dequeue() {
+    if (this.length === 0) {
+      return null
+    }
+    let dequeued
+    if (this.first === this.last) {
+      this.last = null
+      this.length--
+      return this.first.value
+    } else {
+      dequeued = this.first.value;
+      this.first = this.first.next
+    }
+
+    this.length --
+
+    return dequeued
+  }
 }
 
 
