@@ -31,7 +31,16 @@ class Stack {
     return this
   }
 
- 
+  pop() {
+    if(this.length === 0) {
+      return null
+    } else {
+      const value = this.top.value
+      this.top = this.top.next
+      this.length --
+      return value
+    }
+  }
 }
 
 const myStack = new Stack()
